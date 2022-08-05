@@ -159,7 +159,7 @@
                         <div class="card-body" class="account-wrapper">
                             <form action="" class="account-form">
                                 <div class="text-center m-3">
-                                    <h5>Detail Player (Minimal 5 Orang)</h5>
+                                    <h5>Detail Player (Minimal <span id="jmlh-orang"></span> Orang)</h5>
                                 </div>
                                 <h6>Player 1</h6>
                                 <div class="form-group">
@@ -278,10 +278,12 @@
     <script>
         $('#ff').click(function () {
             $('#jenis-game').text('Free Fire');
+            $('#jmlh-orang').text('4');
             $('#cat_id').val('1');
         });
         $('#ml').click(function () {
             $('#jenis-game').text('Mobile Legends');
+            $('#jmlh-orang').text('5');
             $('#cat_id').val('2');
         });
     </script>
