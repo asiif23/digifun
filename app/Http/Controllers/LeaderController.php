@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Leader;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class LeaderController extends Controller
 {
@@ -22,9 +24,20 @@ class LeaderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $leader = new Leader();
+        $leader->category_id = $request->category_id;
+        $leader->name = $request->name;
+        $leader->email = $request->email;
+        $leader->alamat = $request->asal_kota;
+        $leader->no_hp = $request->no_hp;
+        $leader->nama_tim = $request->nama_tim;
+        $leader->logo = $request->logo;
+        $leader->save();
+        $leader_id = Leader::where('email', $request->email)->get('id');
+     
+        return response()->json(['success'=>'SUKSES', 'leader_id'=>$leader_id]);
     }
 
     /**

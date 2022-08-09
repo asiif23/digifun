@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -22,9 +23,16 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $player = new Player();
+        $player->leader_id = $request->leader_id;
+        $player->nickname = $request->nick;
+        $player->id_game = $request->id_game;
+        $player->save();
+     
+        
+        return response()->json(['success'=>'SUKSES']);
     }
 
     /**

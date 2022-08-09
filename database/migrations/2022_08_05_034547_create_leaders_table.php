@@ -18,11 +18,11 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('name');
-            $table->string('no_hp');
+            $table->string('no_hp')->unique();
             $table->string('alamat');
-            $table->string('email');
-            $table->string('nama_team');
-            $table->string('logo');
+            $table->string('email')->unique();
+            $table->string('nama_tim');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

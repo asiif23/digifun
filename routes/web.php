@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('web.registration');
 });
+Route::get('/midtrans',[App\Http\Controllers\MidtransController::class, 'index']);
+Route::post('/registrasi',[App\Http\Controllers\LeaderController::class, 'create'])->name('registrasi');
+Route::post('/registrasiplayer',[App\Http\Controllers\PlayerController::class, 'create'])->name('registrasi.player');
