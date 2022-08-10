@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MidtransController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = 'SB-Mid-server-QiwYYQHxoBc8UrpWVaJ8y_GY';
@@ -16,23 +16,24 @@ class MidtransController extends Controller
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $address = $request->address;
         $params = array(
             'transaction_details' => array(        
                 'order_id' => rand(),        
-                'gross_amount' => 10000,    
+                'gross_amount' => 25000,
             ),
             'customer_details' => array(        
-                'first_name' => 'budi',        
-                'last_name' => 'pratama',        
-                'email' => 'budi.pra@example.com',        
-                'phone' => '08111222333',    
+                'first_name' => $name,      
+                'last_name' => '',
+                'email' => $email,
+                'phone' => $phone,
+                'address' => $address,
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        // return $snapToken;
-        // dd($snapToken);
-        return view('midtrans',[
-            'token' => $snapToken,
-        ]);
+        return response()->json(['token'=>$snapToken, 'name'=>$name, 'address'=>$address]);
     }
 }

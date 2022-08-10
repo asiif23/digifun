@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('web.index');
 });
-Route::get('/register', function () {
-    return view('web.registration');
+Route::get('/invoices', function () {
+    return view('web.invoices');
 });
+// Route::get('/register', function () {
+//     return view('web.registration');
+// });
+Route::get('/order',[App\Http\Controllers\OrderController::class, 'store']);
 Route::get('/midtrans',[App\Http\Controllers\MidtransController::class, 'index']);
 Route::post('/registrasi',[App\Http\Controllers\LeaderController::class, 'create'])->name('registrasi');
 Route::post('/registrasiplayer',[App\Http\Controllers\PlayerController::class, 'create'])->name('registrasi.player');

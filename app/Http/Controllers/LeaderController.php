@@ -26,6 +26,9 @@ class LeaderController extends Controller
      */
     public function create(Request $request)
     {
+        $nm = $request->logo;
+        $namafile = $nm->getClientOriginalName();
+
         $leader = new Leader();
         $leader->category_id = $request->category_id;
         $leader->name = $request->name;
@@ -33,9 +36,10 @@ class LeaderController extends Controller
         $leader->alamat = $request->asal_kota;
         $leader->no_hp = $request->no_hp;
         $leader->nama_tim = $request->nama_tim;
-        $leader->logo = $request->logo;
+        $leader->logo = $namafile;
+        $nm->move(public_path().'/images/logo-squad', $namafile);
         $leader->save();
-        $leader_id = Leader::where('email', $request->email)->get('id');
+        $leader_id = Leader::where('email', $request->email)->get();
      
         return response()->json(['success'=>'SUKSES', 'leader_id'=>$leader_id]);
     }

@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('leader_id');
             $table->foreign('leader_id')->references('id')->on('leaders');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('order_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('alamat');
+            $table->string('phone');
             $table->string('status');
             $table->string('snap_token');
             $table->string('total');

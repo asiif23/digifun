@@ -13,22 +13,21 @@
                         <li>
                             <a href="{{url('/')}}">Home</a>
                         </li>
-
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="#about">About Us</a>
                         </li>
                         <li>
-                            <a href="#">Speakers</a>
+                            <a href="#schedule">Schedule</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#speakers">Speakers</a>
                         </li>
                     </ul>
                     <div class="cart-ticket">
-                        <a href="{{ url('register') }}" class="ticket-btn lab-btn ">
+                        <button href="{{ url('register') }}" class="ticket-btn lab-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="ff">
                             <span>Register</span>
                             <span>Tournament</span>
-                        </a>
+                        </button>
                     </div>
 
                     <!-- toggle icons -->

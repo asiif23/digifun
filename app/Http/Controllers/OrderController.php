@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Leader;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $leader = Leader::where('email', $request->email)->get();
+        $order = new Order();
+        $order->leader_id = $leader[0]->id;
+        $order->status = $request->status;
+        $order->order_id = $request->order_id;
+        $order->snap_token = $request->snap_token;
+        $order->total = '25000';
+        $order->name = $leader[0]->name;
+        $order->email = $leader[0]->email;
+        $order->alamat = $leader[0]->alamat;
+        $order->phone = $leader[0]->no_hp;
+        $order->save();
+        return response()->json(['success'=>'SUKSES']);
     }
 
     /**

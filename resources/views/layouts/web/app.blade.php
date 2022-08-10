@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <title>Digifun Festival 2022</title>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/web/css/lightcase.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}">
-    @yield('css')
+    @include('web.registration')
 </head>
 
 <body>
