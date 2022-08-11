@@ -11,7 +11,7 @@
     }
 </style>
 <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
-<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-4gjWr7lGlDXz52VZ">
+<script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="Mid-client-0d1iR2CCiStu-0KX">
 </script>
 <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 <meta name="csrf_token" content="{{ csrf_token() }}" />
@@ -56,7 +56,7 @@
                         </div>
                         <div class="step-item">
                             <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="4">
                                 4
                             </button>
                             <div class="step-title">
@@ -106,7 +106,7 @@
                                     <div class="form-group">
                                         <label for="logo">Masukkan Logo Tim. ( *jika ada )</label>
                                         <input type="file" placeholder="Masukkan Logo" name="logo"
-                                            id="logo">
+                                            id="logo" value="logo.png">
                                     </div>
                                     <span>Jika terdapat kendala dalam proses registrasi, silahkan <a href="https://wa.me/6281222310801/?text={{ urlencode('Halo Admin, Saya Mengalami Kendala Saat Proses Registrasi Event E-Sport *DIGIFUN*') }}"><span class="text-call">hubungi kami</span> </a>.</span>
                                     <div class="card-footer text-end">
@@ -173,12 +173,12 @@
                                             <img id="logo_squad" src="" alt="Logo Squad" width="200" height="200" hidden />
                                         </div>
                                         <div class="col-12">
-                                            <h6><b><span id="squad_name"></span></b></h6>
+                                            <h6 class="mt-2 mb-2"><b><span id="squad_name"></span></b></h6>
                                         </div>
                                     </div>
                                     <div class="row text-start ms-2">
                                         <div class="col-4">Order Id</div>
-                                        <div class="col-8 text-center"><span id="order_id" class="text-danger">Klik Bayar Sekarang Dahulu</span></div>
+                                        <div class="col-8 text-center"><b><span id="order_id" class="text-danger">Klik Bayar Sekarang Dahulu</span></b></div>
                                     </div>
                                     <div class="row text-start ms-2">
                                         <div class="col-4">Nama Tim</div>
@@ -223,6 +223,7 @@
                                 <input type="text" name="address-order" id="order-address" hidden>
                                 <input type="text" name="token-order" id="order-token" hidden>
                                 <input type="text" name="status-order" id="order-status" hidden>
+                                <p class="text-warning mt-2" id="perhatian">*Jangan Tutup Pop Up Sebelum Pembayaran Sukses !</p>
                                 <button class="btn btn-sm lab-btn" id="pay-button">Bayar Sekarang</button>
                             </div>
                         </div>
@@ -236,9 +237,14 @@
                             <div class="card-body">
                                 <div class="text-center m-3">
                                     <h5>Download Invoices</h5>
-                                    <span>*sebagai tanda bukti pembayaran</span>
+                                    <span>*sebagai tanda bukti pembayaran dan syarat registrasi ulang.</span>
                                 </div>
-
+                                <div style="width: 100%; height: 940px;" id="inpois" hidden>
+                                    <iframe id="iframe" src="" frameborder="1" style="width: 100%; height: 100%;"></iframe>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center" id="inpoiss" hidden>
+                                <button class="btn btn-sm lab-btn mb-3" id="download">Download Invoices</button>
                             </div>
                         </div>
                     </div>
@@ -310,8 +316,9 @@
                 $('input[name="email-order"]').val(data.leader_id[count].email);
                 $('input[name="address-order"]').val(data.leader_id[count].alamat);
             },
-            error: function() {
+            error: function(data) {
                 alert("Harap Koreksi Kembali Form Isian Anda!");
+                // console.log(data);
             }
         });
     });
@@ -375,12 +382,12 @@
         var name = $('input[name="name-order"]').val();
         var phone = $('input[name="phone-order"]').val();
         var email = $('input[name="email-order"]').val();
-        var address = $('input[name="address-order"]').val();
+        // var address = $('input[name="address-order"]').val();
         var token = $('input[name="token-order"]').val();
         // console.log(address,name,phone,email,token);
         $.ajax({
             type: 'GET',
-            url: '/midtrans?name=' + name + '&email=' + email + '&phone=' + phone + '&address=' + address,
+            url: '/midtrans?name=' + name + '&email=' + email + '&phone=' + phone,
             data:'_token = <?php echo csrf_token() ?>',
             success: function(data) {
                 $('input[name="token-order"]').val(data.token);
@@ -395,32 +402,31 @@
                             /* You may add your own implementation here */
                             // console.log(result);
                             // console.log(result.status_message);
-                            $('input[name="status-order"]').val(result.status_message);
-                            $('#order_id').text('SUKSES').removeClass('text-danger');
-                            $('#pay-button').text('Lihat Status Pembayaran');
-                            order()
+                            $('input[name="status-order"]').val('SUKSES');
+                            $('#order_id').text(result.order_id).removeClass('text-warning').removeClass('text-danger').addClass('text-success');
+                            $('#pay-button').text('PEMBAYARAN SUKSES').prop('disabled', true);
+                            $('#perhatian').attr('hidden', true);
+                            order();
                         },
                         onPending: function(result){
                             /* You may add your own implementation here */
                             // console.log(result);
                             // console.log(result.status_message);
-                            $('input[name="status-order"]').val(result.status_message);
-                            $('#order_id').text('PENDING').removeClass('text-danger');
+                            $('input[name="status-order"]').val('PENDING');
+                            $('#order_id').text('Selesaikan Pembayaran').removeClass('text-danger').addClass('text-warning');
                             $('#pay-button').text('Lihat Status Pembayaran');
-                            order()
                         },
                         onError: function(result){
                             /* You may add your own implementation here */
                             // console.log(result);
                             // console.log(result.status_message);
-                            $('input[name="status-order"]').val(result.status_message);
-                            $('#order_id').text('GAGAL').removeClass('text-danger');
+                            $('input[name="status-order"]').val('GAGAL');
+                            $('#order_id').text(result.order_id).removeClass('text-danger');
                             $('#pay-button').text('Lihat Status Pembayaran');
                             order()
                         },
                         onClose: function(){
-                            /* You may add your own implementation here */
-                            // alert('you closed the popup without finishing the payment');
+
                         }
                     })
                     // customer will be redirected after completing payment pop-up      
@@ -444,16 +450,38 @@
             url: '/order?email=' + email + '&phone=' + phone + '&status=' + status + '&snap_token=' + token + '&name=' + name + '&order_id=' + order,
             data:'_token = <?php echo csrf_token() ?>',
             success: function (data) {
-                alert('sukses menambahkan ke table order')
+                // alert('sukses menambahkan ke table order');
+                $('#4').click();
+                invoice();
+            },
+            error: function (data) {
+                alert('Pembayaran Gagal, Harap hubungi Admin');
+                console.log(data);
             }
         })
     }
+
     function gambar_squad()
     {
         var sumber_logo = $('#logo_squad_img').text();
         var src_attr = 'images/logo-squad/' + sumber_logo;
         console.log(src_attr);
         $('#logo_squad').attr('src', src_attr);
+    }
+
+    function invoice()
+    {
+        var order = $('#order_id').text();
+        var url = 'invoice-details?order_id=' + order;
+        $('#iframe').attr('src',url);
+        $('#inpois').attr('hidden', false);
+        $('#inpoiss').attr('hidden', false);
+        $('#download').click(function () {
+            var myIframe = document.getElementById("iframe").contentWindow;
+                myIframe.focus();
+                myIframe.print();
+                return false;
+        });
     }
 </script>
 <!-- Login Section Section Ends Here -->

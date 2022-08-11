@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Leader;
 use App\Models\Order;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,9 +14,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $order_id = $request->order_id;
+        $order = Order::where('order_id', $order_id)->with('leader')->get();
+        $id = $order[0]->leader->id;
+        $tim = Player::where('leader_id', $id)->get();
+        return view('web.invoices', ['order' => $order, 'tim' => $tim]);
     }
 
     /**

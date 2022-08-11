@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('leader_id');
             $table->foreign('leader_id')->references('id')->on('leaders');
-            $table->integer('order_id');
+            $table->integer('order_id')->unique();
             $table->string('name');
             $table->string('email');
             $table->string('alamat');

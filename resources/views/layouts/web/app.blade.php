@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/web/css/lightcase.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     @include('web.registration')
 </head>
 
