@@ -2093,7 +2093,7 @@ ul li {
   z-index: 9999;
   width: 100%;
   height: 100%;
-  background: #df01ae;
+  background: linear-gradient(90deg, #07165b 0%, #c1069b 100%);
 }
 .preloader .preloader-inner {
   position: absolute;

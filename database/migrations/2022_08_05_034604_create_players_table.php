@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nickname')->default('-');
             $table->string('id_game')->default('-');
+            $table->string('name')->default('-');
             $table->unsignedBigInteger('leader_id');
             $table->foreign('leader_id')->references('id')->on('leaders');
             $table->timestamps();

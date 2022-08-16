@@ -5,6 +5,10 @@
             height: 50px;
             background: white;
         }
+        .accor-thumb{
+            display: none;
+            overflow: hidden;
+        }
     </style>
     <section class="schedule-section padding-tb padding-b bg-image" id="schedule">
         <div class="container-fluid p-5">
@@ -24,11 +28,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-one"
                                             aria-expanded="true" aria-controls="collapse-one">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/opening.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Opening</span>
                                             </span>
 
@@ -37,9 +41,7 @@
                                     <div id="collapse-one" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>14:00 - 14:15</li>
@@ -55,11 +57,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-two"
                                             aria-expanded="true" aria-controls="collapse-two">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/speech.png') }}" class="icon-schedule rounded-circle"
                                                         alt="speaker">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Speech From Chairman of IESPA</span>
                                             </span>
 
@@ -84,11 +86,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-three"
                                             aria-expanded="true" aria-controls="collapse-three">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/speech.png') }}" class="icon-schedule rounded-circle"
                                                         alt="speaker">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Speech From Walikota Solo</span>
                                             </span>
 
@@ -112,11 +114,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-four"
                                             aria-expanded="true" aria-controls="collapse-four">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/ceremony.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Opening Ceremony</span>
                                             </span>
 
@@ -140,11 +142,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-five"
                                             aria-expanded="true" aria-controls="collapse-five">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/gamer.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Offline Qualification Sesi 1</span>
                                             </span>
 
@@ -168,11 +170,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-six"
                                             aria-expanded="true" aria-controls="collapse-six">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/podcast.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Talkshow Bicaralive.id</span>
                                             </span>
 
@@ -196,11 +198,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-seven"
                                             aria-expanded="true" aria-controls="collapse-seven">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/break.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Break</span>
                                             </span>
 
@@ -209,7 +211,7 @@
                                     <div id="collapse-seven" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam aliquid deserunt quam sequi ipsum iusto, voluptas tempora quidem consequuntur magni nisi molestiae alias.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>17:15 - 18:30</li>
@@ -224,11 +226,11 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-eight"
                                             aria-expanded="true" aria-controls="collapse-eight">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
+                                                {{-- <span class="accor-thumb">
                                                     <img src="{{ asset('assets/web/images/event/member/gamer.png') }}"
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
-                                                </span>
+                                                </span> --}}
                                                 <span class="h7">Offline Qualification Sesi 2</span>
                                             </span>
 
@@ -237,7 +239,7 @@
                                     <div id="collapse-eight" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam aliquid deserunt quam sequi ipsum iusto, voluptas tempora quidem consequuntur magni nisi molestiae alias.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>18:30 - 19:30</li>
@@ -265,7 +267,7 @@
                                     <div id="collapse-songo" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam aliquid deserunt quam sequi ipsum iusto, voluptas tempora quidem consequuntur magni nisi molestiae alias.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Car Crash Coma</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>19:30 - 20:00</li>
@@ -293,7 +295,7 @@
                                     <div id="collapse-nine" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-2">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam aliquid deserunt quam sequi ipsum iusto, voluptas tempora quidem consequuntur magni nisi molestiae alias.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>20:00 - Selesai</li>
@@ -328,9 +330,7 @@
                                     <div id="collapse-ten" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>13:00 - 14:15</li>
@@ -358,9 +358,7 @@
                                     <div id="collapse-eleven" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>14:15 - 14:30</li>
@@ -388,9 +386,7 @@
                                     <div id="collapse-twelve" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>14:30 - 16:30</li>
@@ -405,14 +401,8 @@
                                             data-bs-toggle="collapse" data-bs-target="#collapse-thirteen"
                                             aria-expanded="true" aria-controls="collapse-thirteen">
                                             <span class="accor-header-inner d-flex flex-wrap align-items-center">
-                                                <span class="accor-thumb">
-                                                    <img src="{{ asset('assets/web/images/event/member/podcast.png') }}"
-                                                        alt="speaker" class="icon-schedule rounded-circle">
-
-                                                </span>
-                                                <span class="h7">Talkshow Arafura Media Design (Bandung)</span>
+                                                <span class="h7">Talkshow Arafura Media Design</span>
                                             </span>
-
                                         </button>
                                     </div>
                                     <div id="collapse-thirteen" class="accordion-collapse collapse"
@@ -446,7 +436,7 @@
                                     <div id="collapse-fourteen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Jojo Malinoa</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>17:00 - 17:30</li>
@@ -474,7 +464,7 @@
                                     <div id="collapse-fiveteen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>17:30 - 18:30</li>
@@ -502,7 +492,7 @@
                                     <div id="collapse-sixteen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>18:30 - 19:30</li>
@@ -530,7 +520,7 @@
                                     <div id="collapse-seventeen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>19:30 - 20:00</li>
@@ -558,7 +548,7 @@
                                     <div id="collapse-eightteen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Jungkat Jungkit</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>20:00 - 20:30</li>
@@ -586,7 +576,7 @@
                                     <div id="collapse-nineteen" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-3">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis dolore hic, quibusdam, dolorum ab fugiat iste corrupti placeat necessitatibus accusamus enim velit.</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>20:30 - Selesai</li>
@@ -621,9 +611,7 @@
                                     <div id="collapse-twentyone" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>13:00 - 14:15</li>
@@ -651,9 +639,7 @@
                                     <div id="collapse-twentytwo" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>14:15 - 14:30</li>
@@ -681,9 +667,7 @@
                                     <div id="collapse-twentythree" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Phosrescen ntiate prncple centered networks via magnetc
-                                                Apildous eviscuate standards complant fulys tested metrs
-                                                without creative desi futureproof web</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>14:30 - 16:30</li>
@@ -739,7 +723,7 @@
                                     <div id="collapse-twentyfive" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quisquam minus sunt, nesciunt obcaecati illo nisi ullam quod provident vero quibusdam labore iusto cum enim ex, perferendis quos quia repudiandae!</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Cantigi / Lajem</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>17:00 - 17:30</li>
@@ -767,7 +751,7 @@
                                     <div id="collapse-twentysix" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quisquam minus sunt, nesciunt obcaecati illo nisi ullam quod provident vero quibusdam labore iusto cum enim ex, perferendis quos quia repudiandae!</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>17:30 - 19:00</li>
@@ -795,7 +779,7 @@
                                     <div id="collapse-twentyseven" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quisquam minus sunt, nesciunt obcaecati illo nisi ullam quod provident vero quibusdam labore iusto cum enim ex, perferendis quos quia repudiandae!</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Arum Mudub</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>19:00 - 19:30</li>
@@ -815,7 +799,7 @@
                                                         alt="speaker" class="icon-schedule rounded-circle">
 
                                                 </span>
-                                                <span class="h7">Announcement Awwarding Free Fire</span>
+                                                <span class="h7">Announcement Awwarding</span>
                                             </span>
 
                                         </button>
@@ -823,7 +807,7 @@
                                     <div id="collapse-twentyeight" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quisquam minus sunt, nesciunt obcaecati illo nisi ullam quod provident vero quibusdam labore iusto cum enim ex, perferendis quos quia repudiandae!</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia E-Sport</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>19:30 - 20:00</li>
@@ -851,7 +835,7 @@
                                     <div id="collapse-twentynine" class="accordion-collapse collapse"
                                         aria-labelledby="heading-Eight" data-bs-parent="#accordionExample-4">
                                         <div class="accordion-body">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quisquam minus sunt, nesciunt obcaecati illo nisi ullam quod provident vero quibusdam labore iusto cum enim ex, perferendis quos quia repudiandae!</p>
+                                            <p>.</p>
                                             <ul class="ev-schedule-meta d-flex flex-wrap">
                                                 <li><span><i class="icofont-user"></i></span>Panitia Digifun</li>
                                                 <li><span><i class="icofont-clock-time"></i></span>20:00 - Selesai</li>

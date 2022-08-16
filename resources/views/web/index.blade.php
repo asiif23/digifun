@@ -27,7 +27,7 @@
                 <div class="row gy-5 align-items-center">
                     <div class="col-lg-6 col-12">
                         <div class="banner-content">
-                            <ul id="countdown" class="countdown count-down" data-date="August 26, 2022 09:00:00">
+                            <ul id="countdown" class="countdown count-down" data-date="August 26, 2022 12:00:00">
                                 <li class="clock-item"><span class="count-number days">0</span>
                                     <p class="count-text">Hari</p>
                                 </li>
@@ -49,8 +49,10 @@
                             <button type="button" class="btn lab-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="ff"><span>Register Now</span></button>
                             <p>Powered By:</p>
                             <div class="event-sponsored">
-                                <img src="{{ asset('assets/web/images/logo/look-logo.png') }}" alt="sponsor"
+                                <a href="https://lookcreative.id">
+                                    <img src="{{ asset('assets/web/images/logo/look-logo.png') }}" alt="sponsor"
                                     style="height: 87px;">
+                                </a>
                                 <img class="mt-2" src="{{ asset('assets/web/images/logo/iespa.png') }}" alt="sponsor"
                                     style="height: 57px;">
                             </div>
@@ -58,7 +60,16 @@
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="banner-image">
-                            <img src="{{ asset('assets/web/images/logo/poster.png') }}" style="border-radius: 20px;" alt="banner-img">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="{{ asset('assets/web/images/logo/poster.png') }}" style="border-radius: 20px;" alt="banner-img">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('assets/web/images/logo/poster2.png') }}" style="border-radius: 20px;" alt="banner-img">
+                                    </div>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +91,7 @@
                                 <div class="flip-box-front text-center"
                                     style="background: black;">
                                     <div class="inner color-white">
-                                        <h3 class="flip-box-header">E-SPORT</h3>
+                                        <h3 class="flip-box-header">{{strToUpper('Esport')}}</h3>
                                         <p></p>
                                         {{-- <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt=""
                                             class="flip-box-img"> --}}
@@ -89,8 +100,8 @@
                                 <div class="flip-box-back text-center"
                                     style="background: black;">
                                     <div class="inner color-white">
-                                        <h3 class="flip-box-header">E-SPORT</h3>
-                                        <p>Dikarenakan daya tarik dan antusiasme yang tinggi pada turnamen game online khususnya pada game Free Fire, turnamen ini diadakan untuk seluruh lapisan masyarakat Indonesia.</p>
+                                        <h3 class="flip-box-header">{{strToUpper('Esport')}}</h3>
+                                        <p>Melihat geliat esport pro scene dan kurangnya wadah bagi teman-teman entah player, coach caster, serta pelaku pelaku esport di bidang lain, DigiFun hadir memberi wadah serta experience khususnya untuk pelaku dan komunitas esport di Solo raya dan sekitarnya.</p>
                                         <button data-bs-toggle="modal" data-bs-target="#exampleModal" id="ff" class="lab-btn mt-2">Daftar Sekarang</button>
                                     </div>
                                 </div>
@@ -105,7 +116,7 @@
                                 <div class="flip-box-front text-center"
                                     style="background: #E9585E;">
                                     <div class="inner color-white">
-                                        <h3 class="flip-box-header">ENTERTAINMENT</h3>
+                                        <h3 class="flip-box-header">{{strToUpper('Edutainment')}}</h3>
                                         <p></p>
                                         {{-- <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt=""
                                             class="flip-box-img"> --}}
@@ -114,8 +125,8 @@
                                 <div class="flip-box-back text-center"
                                     style="background: #E9585E;">
                                     <div class="inner color-white">
-                                        <h3 class="flip-box-header">ENTERTAINMENT</h3>
-                                        <p>Saat acara berlangsung akan ada pertunjukan live music, quiz dengan hadiah menarik. Selain itu juga akan diadakan talkshow dengan mengundang berbagai narasumber yang berkompeten di bidang digitalisasi. </p>
+                                        {{-- <h3 class="flip-box-header">{{strToUpper('Edutainment')}}</h3> --}}
+                                        <p>Digifun ingin memberikan pembelajaran bagi pelaku digital, mengedukasi masyarakat memiliki kecakapan digital, serta memperkenalkan dan menghubungkan ekosistem digital lokal, nasional dan internasional melalui talkshow dari pelaku dan expert serta pertunjukan musik dari band lokal sebagai hiburan khas anak muda.</p>
                                     </div>
                                 </div>
                             </div>
@@ -138,8 +149,8 @@
                                 <div class="flip-box-back text-center"
                                     style="background: #05307F;">
                                     <div class="inner color-white">
-                                        <h3 class="flip-box-header">EXPO</h3>
-                                        <p>Akan digelar fintech dan digital Expo yang diisi dengan booth-booth menarik. Selain itu, akan ada tenant food and beverage yang akan menambah kemeriahan acara.</p>
+                                        {{-- <h3 class="flip-box-header">EXPO</h3> --}}
+                                        <p>Komponen ekosistem digital tak lepas dari pelaku industri digital itu sendiri, pemilik brand, kreator dan perusahaan di industri digital. Expo exhibition Digifun nanti diharapkan dapat menjadi ruang pamer yang ditujukan kepada publik terkait produk dari brand berbasis teknologi, dan industri media sehingga komponen ekosistem digital menjadi lebih terintegrasi dan kolaboratif.</p>
                                     </div>
                                 </div>
                             </div>
@@ -220,18 +231,13 @@
                     <div class="col-lg-6 col-12">
                         <div class="speaker-item">
                             <div class="speaker-inner">
-                                <div class="speaker-thumb">
-                                    <img src="{{ asset('assets/web/images/speakers/01.png') }}" alt="speaker">
-                                </div>
-                                <div class="speaker-content">
+                                <div class="speaker-content m-auto">
                                     <div class="spkr-content-title">
                                         <h5><a href="speaker-details.html">Zen Al-Anshory</a> </h5>
                                         <p>Speaker</p>
                                     </div>
                                     <div class="spkr-content-details">
-                                        <p>Completey conceplua high quality
-                                            nice markes rather than long term
-                                            impact human capital</p>
+                                        <p>Talkshow BICARALIVE.ID</p>
                                         <ul class="social-icons">
                                             <li><a href="#"><i class="icofont-twitter"></i></a></li>
                                             <li><a href="#"><i class="icofont-instagram"></i></a></li>
@@ -247,18 +253,13 @@
                     <div class="col-lg-6 col-12">
                         <div class="speaker-item">
                             <div class="speaker-inner">
-                                <div class="speaker-thumb">
-                                    <img src="{{ asset('assets/web/images/speakers/02.png') }}" alt="speaker">
-                                </div>
-                                <div class="speaker-content">
+                                <div class="speaker-content m-auto">
                                     <div class="spkr-content-title">
                                         <h5><a href="speaker-details.html">Erose Parwita </a> </h5>
                                         <p>Speaker</p>
                                     </div>
                                     <div class="spkr-content-details">
-                                        <p>Completey conceplua high quality
-                                            nice markes rather than long term
-                                            impact human capital</p>
+                                        <p>Talkshow The Investor.</p>
                                         <ul class="social-icons">
                                             <li><a href="#"><i class="icofont-twitter"></i></a></li>
                                             <li><a href="#"><i class="icofont-instagram"></i></a></li>
@@ -281,7 +282,7 @@
     <!-- Speakers section end here -->
 
     <!-- ======= Sponsor sectin start here ======== -->
-    <section class="sponsor-section padding-tb padding-b bg-image">
+    {{-- <section class="sponsor-section padding-tb padding-b bg-image">
         <div class="container">
             <div class="section-header">
                 <h2>Event Sponsors</h2>
@@ -303,11 +304,8 @@
                         </div>
                     </div>
                 </div>
-                {{-- <a href="#" class="lab-btn"><span>
-                        Become a Sponsor
-                    </span></a> --}}
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ======= Sponsor sectin end here ======== -->
 @endsection

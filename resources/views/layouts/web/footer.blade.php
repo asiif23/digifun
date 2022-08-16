@@ -22,7 +22,7 @@
                                     <img src="{{ asset('assets/web/images/footer/footer-top/02.png') }}" alt="email-icon">
                                 </div>
                                 <div class="lab-content">
-                                    <span>digifun.fest@gmail.com</span>
+                                    <a href="mailto:admin@digifunfest.com"><span>admin@digifunfest.com</span></a>
                                 </div>
                             </div>
                         </div>

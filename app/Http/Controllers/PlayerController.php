@@ -25,13 +25,24 @@ class PlayerController extends Controller
      */
     public function create(Request $request)
     {
-        $player = new Player();
-        $player->leader_id = $request->leader_id;
-        $player->nickname = $request->nick;
-        $player->id_game = $request->id_game;
-        $player->save();
-     
-        
+        if(isset($request->nick, $request->id_game)){
+            $player = new Player();
+            $player->leader_id = $request->leader_id;
+            $player->nickname = $request->nick;
+            $player->id_game = $request->id_game;
+            $player->name = $request->name_player;
+            $player->save();
+        }
+        else {
+            $player = new Player();
+            $player->leader_id = $request->leader_id;
+            $player->nickname = '-';
+            $player->id_game = '-';
+            $player->name = '-';
+            $player->save();
+        }
+
+
         return response()->json(['success'=>'SUKSES']);
     }
 

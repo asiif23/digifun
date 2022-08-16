@@ -26,19 +26,32 @@ class LeaderController extends Controller
      */
     public function create(Request $request)
     {
-        $nm = $request->logo;
-        $namafile = $nm->getClientOriginalName();
-
-        $leader = new Leader();
-        $leader->category_id = $request->category_id;
-        $leader->name = $request->name;
-        $leader->email = $request->email;
-        $leader->alamat = $request->asal_kota;
-        $leader->no_hp = $request->no_hp;
-        $leader->nama_tim = $request->nama_tim;
-        $leader->logo = $namafile;
-        $nm->move(public_path().'/images/logo-squad', $namafile);
-        $leader->save();
+        if(isset($request->logo)){
+            $nm = $request->logo;
+            $namafile = $nm->getClientOriginalName();
+    
+            $leader = new Leader();
+            $leader->category_id = $request->category_id;
+            $leader->name = $request->name;
+            $leader->email = $request->email;
+            $leader->alamat = $request->asal_kota;
+            $leader->no_hp = $request->no_hp;
+            $leader->nama_tim = $request->nama_tim;
+            $leader->logo = $namafile;
+            $nm->move(public_path().'/images/logo-squad', $namafile);
+            $leader->save();
+        }
+        else{
+            $leader = new Leader();
+            $leader->category_id = $request->category_id;
+            $leader->name = $request->name;
+            $leader->email = $request->email;
+            $leader->alamat = $request->asal_kota;
+            $leader->no_hp = $request->no_hp;
+            $leader->nama_tim = $request->nama_tim;
+            $leader->logo = 'foto.png';
+            $leader->save();
+        }
         $leader_id = Leader::where('email', $request->email)->get();
      
         return response()->json(['success'=>'SUKSES', 'leader_id'=>$leader_id]);
