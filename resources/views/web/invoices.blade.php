@@ -12,6 +12,8 @@
     {{-- <link rel="stylesheet" href="{{ asset('assets/web/css/invoices.css') }}"> --}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/web/images/x-icon/01.png') }}">
     <title>Invoices User</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
     <style>
         body {
             -webkit-print-color-adjust: exact;
@@ -20,7 +22,7 @@
         @media print {
             @page {
                 margin: 0;
-                size: portrait;
+                size: landscape;
                 padding: 0;
             }
 
@@ -48,12 +50,12 @@
                         <span>Tertanggal: <strong>{{ $item->created_at }}</strong></span>
                     </div>
                     <div>
-                        <span class="text-end"> Status Pembayaran: <strong>{{ $item->status }}</strong></span>
+                        <span class="text-end"> Status Registrasi: <strong>{{ $item->status }}</strong></span>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <div class="m-1 mb-2">
+                <div class="m-3 ms-1">
                     {!! $qrcode !!}
                 </div>
                 <div class="row mb-4">
@@ -108,49 +110,6 @@
                     </table>
                 </div>
             </div>
-            <div class="p-3">
-                <div class="text-start mb-2">
-                    <strong><b>Rincian Pembayaran</b></strong>
-                </div>
-                <div class="table-responsive-sm">
-                    <table class="table table-striped">
-                        <thead style="background: #01163E" class="text-white">
-                            <tr>
-                                <th class="center">#</th>
-                                <th>Item</th>
-                                {{-- <th>Description</th>
-
-                                    <th class="right">Unit Cost</th> --}}
-                                <th class="center">Qty</th>
-                                <th class="right">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center">1</td>
-                                <td class="left strong">Biaya Registrasi</td>
-                                {{-- <td class="left">Extended License</td>
-
-                                    <td class="right">$999,00</td> --}}
-                                <td class="center">1</td>
-                                <td class="right">Rp. 50.000</td>
-                            </tr>
-                            <tr>
-                                <td class="center">2</td>
-                                <td class="left strong">Platform Fee</td>
-                                {{-- <td class="left">Extended License</td>
-
-                                    <td class="right">$999,00</td> --}}
-                                <td class="center">1</td>
-                                <td class="right">Rp. 5.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-end me-4">
-                    <strong><b>Grand Total: <span>Rp. 55.000</span></b></strong>
-                </div>
-            </div>
         </div>
     @endforeach
 
@@ -160,17 +119,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    -->
-    <script></script>
 </body>
 
 </html>

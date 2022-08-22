@@ -233,7 +233,7 @@
                             <div class="speaker-inner">
                                 <div class="speaker-content m-auto">
                                     <div class="spkr-content-title">
-                                        <h5><a href="speaker-details.html">Zen Al-Anshory</a> </h5>
+                                        <h5><a href="speaker-details.html">Zen Al-Ansory</a> </h5>
                                         <p>Speaker</p>
                                     </div>
                                     <div class="spkr-content-details">

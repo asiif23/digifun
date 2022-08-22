@@ -25,6 +25,13 @@ class OrderController extends Controller
         return view('web.invoices', ['order' => $order, 'tim' => $tim, 'qrcode' => $qrcode]);
     }
 
+    public function getOrder(Request $request)
+    {
+        $order = Order::where('email' , $request->email)->get();
+        // dd($order);
+        return response()->json($order);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -47,7 +54,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->leader_id = $leader[0]->id;
         $order->status = $request->status;
-        $order->order_id = $request->order_id;
+        $order->order_id = rand();
         $order->snap_token = $request->snap_token;
         $order->total = '25000';
         $order->name = $leader[0]->name;
@@ -57,7 +64,6 @@ class OrderController extends Controller
         $order->save();
         return response()->json(['success'=>'SUKSES']);
     }
-
     /**
      * Display the specified resource.
      *
@@ -117,5 +123,10 @@ class OrderController extends Controller
         $order_id = $request->order_id;
         $order = Order::where('order_id', $order_id)->with('leader')->get();
         return response()->json($order);
+    }
+    
+    public function data(){
+        $order = Order::with('leader')->get();
+        return view('web.data', ['order' => $order]);
     }
 }

@@ -19,7 +19,7 @@
                             <span>Tertanggal: <strong>{{ $item->created_at }}</strong></span>
                         </div>
                         <div>
-                            <span class="text-end"> Status Pembayaran: <strong>{{ $item->status }}</strong></span>
+                            <span class="text-end"> Status Registrasi: <strong>{{ $item->status }}</strong></span>
                         </div>
                     </div>
                 </div>

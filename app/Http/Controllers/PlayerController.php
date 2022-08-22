@@ -23,7 +23,7 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+   public function create(Request $request)
     {
         if(isset($request->nick, $request->id_game)){
             $player = new Player();

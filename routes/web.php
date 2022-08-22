@@ -32,3 +32,5 @@ Route::get('/invoice-details',[App\Http\Controllers\OrderController::class, 'ind
 Route::post('/registrasi',[App\Http\Controllers\LeaderController::class, 'create'])->name('registrasi');
 Route::post('/registrasiplayer',[App\Http\Controllers\PlayerController::class, 'create'])->name('registrasi.player');
 Route::get('filter', [App\Http\Controllers\OrderController::class, 'cek']);
+Route::get('data', [App\Http\Controllers\OrderController::class, 'data'])->name('data.order');
+Route::get('get-order', [App\Http\Controllers\OrderController::class, 'getOrder']);

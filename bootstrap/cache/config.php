@@ -4,13 +4,13 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost/',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'Asia/Jakarta',
     'locale' => 'id',
     'fallback_locale' => 'id',
     'faker_locale' => 'id_ID',
-    'key' => 'base64:Bf6+1LZajp2WGtyHKffCXOw366mExOsOGkv3d/Gj6LA=',
+    'key' => 'base64:QMmkzCqzvdqkVz1u2JHcFp3Kzf2WHLG553MHhgeVv0k=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -195,7 +195,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/asiifdev/Destop/Project/Digifun/storage/framework/cache/data',
+        'path' => '/home/lookcrtv/Desktop/Project/digifun/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -368,14 +368,14 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/asiifdev/Destop/Project/Digifun/storage/app',
+        'root' => '/home/lookcrtv/Desktop/Project/digifun/storage/app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/asiifdev/Destop/Project/Digifun/storage/app/public',
-        'url' => 'http://localhost//storage',
+        'root' => '/home/lookcrtv/Desktop/Project/digifun/storage/app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
       ),
@@ -394,7 +394,7 @@
     ),
     'links' => 
     array (
-      '/home/asiifdev/Destop/Project/Digifun/public/storage' => '/home/asiifdev/Destop/Project/Digifun/storage/app/public',
+      '/home/lookcrtv/Desktop/Project/digifun/public/storage' => '/home/lookcrtv/Desktop/Project/digifun/storage/app/public',
     ),
   ),
   'hashing' => 
@@ -433,13 +433,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/asiifdev/Destop/Project/Digifun/storage/logs/laravel.log',
+        'path' => '/home/lookcrtv/Desktop/Project/digifun/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/asiifdev/Destop/Project/Digifun/storage/logs/laravel.log',
+        'path' => '/home/lookcrtv/Desktop/Project/digifun/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -491,7 +491,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/home/asiifdev/Destop/Project/Digifun/storage/logs/laravel.log',
+        'path' => '/home/lookcrtv/Desktop/Project/digifun/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -557,7 +557,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/asiifdev/Destop/Project/Digifun/resources/views/vendor/mail',
+        0 => '/home/lookcrtv/Desktop/Project/digifun/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -663,7 +663,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/asiifdev/Destop/Project/Digifun/storage/framework/sessions',
+    'files' => '/home/lookcrtv/Desktop/Project/digifun/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -683,9 +683,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/asiifdev/Destop/Project/Digifun/resources/views',
+      0 => '/home/lookcrtv/Desktop/Project/digifun/resources/views',
     ),
-    'compiled' => '/home/asiifdev/Destop/Project/Digifun/storage/framework/views',
+    'compiled' => '/home/lookcrtv/Desktop/Project/digifun/storage/framework/views',
   ),
   'flare' => 
   array (
@@ -760,7 +760,7 @@
     array (
     ),
     'enable_runnable_solutions' => true,
-    'remote_sites_path' => '/home/asiifdev/Destop/Project/Digifun',
+    'remote_sites_path' => '/home/lookcrtv/Desktop/Project/digifun',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

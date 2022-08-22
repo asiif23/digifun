@@ -91,10 +91,7 @@
         }
     }
 </style>
-<!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
-<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-4gjWr7lGlDXz52VZ">
-</script>
-<!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <meta name="csrf_token" content="{{ csrf_token() }}" />
 
 <!-- Modal Mobile Legends -->
@@ -126,7 +123,7 @@
                                 Player
                             </div>
                         </div>
-                        <div class="step-item">
+                        {{-- <div class="step-item">
                             <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="3">
                                 3
@@ -134,11 +131,11 @@
                             <div class="step-title">
                                 Pembayaran
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="step-item">
                             <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="4">
-                                4
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="3">
+                                3
                             </button>
                             <div class="step-title">
                                 Invoice
@@ -225,7 +222,7 @@
                                         </div>
                                         <p id="attention" hidden>Kosongi dan Klik "Submit" Jika tidak ada Pemain Cadangan.</p>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Masukkan Nama Player" name="name_player"
+                                            <input id="naaama" type="text" placeholder="Masukkan Nama Player" name="name_player"
                                                 required>
                                         </div>
                                         <div class="form-group">
@@ -245,7 +242,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card" style="background: #01153D;">
+                    <div class="card" style="background: #01153D;" hidden>
                         <div id="headingThree">
 
                         </div>
@@ -331,14 +328,16 @@
                             <div class="card-body">
                                 <div class="text-center m-3">
                                     <h5>Download Invoices</h5>
-                                    <span class=" form-pembayaran">*sebagai tanda bukti pembayaran dan syarat registrasi ulang.</span>
+                                    <span class=" form-pembayaran">*Sebagai Syarat Registrasi Ulang.</span>
                                 </div>
-                                <div style="width: 100%; height: 1200px;" id="inpois" hidden>
+                                <div style="width: 1075px; height: 554px;" id="inpois" hidden>
                                     <iframe id="iframe" src="" frameborder="1" style="width: 100%; height: 100%;"></iframe>
                                 </div>
                             </div>
                             <div class="card-footer text-center" id="inpoiss" hidden>
-                                <button class="btn btn-sm lab-btn mb-3" id="download">Download Invoices</button>
+                                <button target="_blank" class="btn btn-sm lab-btn mb-3" id="download">
+                                    Download Invoices
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -370,6 +369,7 @@
     })
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script>
     $.ajaxSetup({
@@ -437,6 +437,7 @@
                     sum += +$(this).text()||1;
                 });
                 var player = $('#player_ke').text();
+                $('#naaama').click();
                 $('#player_ke').text(sum);
                 // console.log(player);
                 if ($('#player_ke').text() === '4') {
@@ -459,11 +460,12 @@
                     $('#form-player').attr('hidden', true);
                     $('#notice_player').attr('hidden', false);
                     $('#attention').attr('hidden', true);
-                    $('#detail_orders').attr('hidden', false);
-                    $('#logo_squad').attr('hidden', false);
-                    gambar_squad()
+                    // $('#detail_orders').attr('hidden', false);
+                    // $('#logo_squad').attr('hidden', false);
+                    // gambar_squad()
+                    order();
                     $('#3').click();
-                    midtrans();
+                    // midtrans();
                     var leader = $('input[name="token-order"]').val();
         console.log(leader);
                 }
@@ -541,17 +543,17 @@
         var name = $('input[name="name-order"]').val();
         var phone = $('input[name="phone-order"]').val();
         var email = $('input[name="email-order"]').val();
-        var token = $('input[name="token-order"]').val();
-        var order = $('#order_id').text();
+        // var token = $('input[name="token-order"]').val();
+        // var order = $('#order_id').text();
         var leader = $('input[name="token-order"]').val();
         console.log(leader);
         $.ajax({
             type: 'GET',
-            url: '/order?email=' + email + '&phone=' + phone + '&status=' + status + '&snap_token=' + token + '&name=' + name + '&order_id=' + order,
+            url: '/order?email=' + email + '&phone=' + phone + '&status=' + 'SUKSES' + '&snap_token=' + 'KOSONG' + '&name=' + name,
             data:'_token = <?php echo csrf_token() ?>',
             success: function (data) {
                 // alert('sukses menambahkan ke table order');
-                $('#4').click();
+                $('#3').click();
                 invoice();
             },
             error: function (data) {
@@ -571,17 +573,37 @@
 
     function invoice()
     {
-        var order = $('#order_id').text();
-        var url = 'invoice-details?order_id=' + order;
-        $('#iframe').attr('src',url);
-        $('#inpois').attr('hidden', false);
-        $('#inpoiss').attr('hidden', false);
-        $('#download').click(function () {
-            var myIframe = document.getElementById("iframe").contentWindow;
-                myIframe.focus();
-                myIframe.print();
-                return false;
-        });
+        var email = $('input[name="email-order"]').val();
+        $.ajax({
+            type: 'GET',
+            url: '/get-order?email=' + email,
+            data:'_token = <?php echo csrf_token() ?>',
+            success: function(data){
+                var order = data[0].order_id;
+                var url = 'invoice-details?order_id=' + order;
+                $('#iframe').attr('src',url);
+                // $('#download').attr('onclick','window.open("'+url+'")');
+                $('#inpois').attr('hidden', false);
+                $('#inpoiss').attr('hidden', false);
+                $('#download').click(function(){
+                    // var width = document.querySelector("iframe").contentWindow.document.querySelector(".card").internal.width;
+                    // var height = document.querySelector("iframe").contentWindow.document.querySelector(".card").height;
+                    html2canvas(document.querySelector("iframe").contentWindow.document.querySelector(".card"),).then(canvas => {
+                        // document.body.appendChild(canvas)
+                        var imgData = canvas.toDataURL('image/jpeg');
+                        var doc = new jsPDF('l', 'pt', [1131,1600]);
+                        var width = doc.internal.pageSize.width;
+                        var height = doc.internal.pageSize.height;
+                        console.log("AT#1: width=" + width + ", height=" + height);
+                        var data = doc.addImage(imgData, 'JPEG',20, 20,1550, 970);
+                        doc.save('invoices.pdf');
+                    });
+                })
+            },
+            error: function(){
+                console.log('ERROR');
+            }
+        })
     }
 </script>
 <!-- Login Section Section Ends Here -->
